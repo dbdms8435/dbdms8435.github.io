@@ -119,6 +119,7 @@
   .fields { display: flex; flex-wrap: wrap; gap: 10px 36px; }
   .field { color: var(--ink); font-size: 1.1rem; font-weight: 700; }
   .field i { margin-right: 9px; color: var(--accent); }
+  .fbreak { flex-basis: 100%; height: 0; }
   .topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-top: 36px; }
   .topic h3 { margin: 0 0 12px; color: var(--muted); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
   .topic ul { margin: 0; padding: 0; list-style: none; }
@@ -144,10 +145,11 @@
     border-bottom: 1px solid var(--line);
   }
   ol.pubs li:last-child { border-bottom: 0; padding-bottom: 0; }
-  ol.pubs li.fig { grid-template-columns: 400px minmax(0, 1fr); gap: 26px; align-items: center; }
+  ol.pubs li.fig { grid-template-columns: 270px minmax(0, 1fr); gap: 24px; align-items: center; }
   ol.pubs li.fig.nofig { grid-template-columns: minmax(0, 1fr); }
   ol.pubs li.fig.nofig .thumb { display: none; }
-  ol.pubs li.fig { margin-top: 16px; padding: 20px; border: 1px solid #c7d7fb; border-radius: 16px; }
+  ol.pubs li.fig { margin-top: 16px; padding: 20px; border: 1px solid #c7d7fb; border-radius: 16px; transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s; }
+  ol.pubs li.fig:hover { transform: translateY(-2px); border-color: #a9c1f7; box-shadow: 0 16px 32px -18px rgba(15, 23, 42, 0.35); }
   .pubs .thumb { display: block; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; overflow: hidden; }
   .pubs .thumb img { display: block; width: 100%; height: auto; }
   .pubs .year { color: var(--muted); font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -160,8 +162,9 @@
     margin-left: 6px;
     padding: 1px 10px;
     border-radius: 999px;
-    background: #dc2626;
-    color: #ffffff;
+    border: 1px solid #f3c4c4;
+    background: #fdeeee;
+    color: #b3261e;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 700;
@@ -274,6 +277,7 @@
     <div class="fields">
       <div class="field"><i class="fa-solid fa-layer-group"></i>Multimodal Learning</div>
       <div class="field"><i class="fa-solid fa-eye"></i>Computer Vision</div>
+      <span class="fbreak"></span>
       <div class="field"><i class="fa-solid fa-comments"></i>Multimodal Large Language Model</div>
       <div class="field"><i class="fa-solid fa-film"></i>Video Understanding</div>
     </div>
@@ -439,6 +443,16 @@
             <p class="title">Artificial Intelligence in Wearable and Medical Applications (AI-WM) Lab</p>
             <p>Intern · Kyung Hee University, Department of Biomedical Engineering</p>
             <p class="detail">Automatic atrial fibrillation detection and prediction · Advisor: Prof. Jinseok Lee</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="date">Jan. 2023</div>
+        <div class="body">
+          <img class="logo" src="logo_sjsu.png" alt="" onerror="this.remove()">
+          <div>
+            <p class="title">San Jose State University <span class="place">· San Jose, USA</span></p>
+            <p>Short-term Major Training Program</p>
           </div>
         </div>
       </li>
