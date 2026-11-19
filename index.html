@@ -157,6 +157,7 @@
   .pubs .authors { margin-top: 4px; color: var(--muted); font-size: 0.93rem; }
   .pubs .authors b { color: var(--ink); }
   .pubs .venue { font-size: 0.93rem; font-style: italic; }
+  .pubs .vtag { margin-bottom: 4px; color: var(--accent); font-size: 0.95rem; font-weight: 700; }
   .badge {
     display: inline-block;
     margin-left: 6px;
@@ -193,11 +194,12 @@
   .timeline li:last-child .body { padding-bottom: 0; }
   .timeline .body::before {
     content: "";
+    box-sizing: border-box;
     position: absolute;
-    left: -8px;
+    left: -9px;
     top: 6px;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     border: 3px solid var(--accent);
     border-radius: 50%;
     background: var(--bg);
@@ -225,11 +227,12 @@
     .timeline li:last-child { padding-bottom: 0; }
     .timeline li::before {
       content: "";
+      box-sizing: border-box;
       position: absolute;
-      left: -8px;
+      left: -9px;
       top: 5px;
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       border: 3px solid var(--accent);
       border-radius: 50%;
       background: var(--bg);
@@ -308,9 +311,9 @@
       <li class="fig">
         <a class="thumb" href="seerankfilter_fig.png" target="_blank" rel="noopener"><img src="seerankfilter_fig.png" alt="Overall architecture of See, Rank, and Filter" onerror="this.closest('li').classList.add('nofig')"></a>
         <div>
+          <div class="vtag">AAAI 2026 <span class="badge">Oral</span></div>
           <div class="ptitle">See, Rank, and Filter: Important Word-Aware Clip Filtering via Scene Understanding for Moment Retrieval and Highlight Detection</div>
           <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
-          <div class="venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 <span class="badge">Oral</span></div>
           <div class="plinks">
             <a class="plink" href="SeeRankFilter_AAAI2026.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>PDF</a>
             <a class="plink" href="https://github.com/VisualAIKHU/SRF" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Code</a>
