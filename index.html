@@ -24,7 +24,7 @@
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    font-size: 16.5px;
+    font-size: 17px;
     line-height: 1.65;
   }
   a { color: var(--accent); text-decoration: none; }
@@ -48,7 +48,7 @@
     gap: 16px;
     min-height: 60px;
   }
-  .topbar .brand { color: var(--ink); font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; white-space: nowrap; }
+  .topbar .brand { color: var(--ink); font-size: 1.05rem; font-weight: 700; white-space: nowrap; }
   .topbar .brand:hover { text-decoration: none; }
   .topbar .links { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
   .topbar .links::-webkit-scrollbar { display: none; }
@@ -83,8 +83,7 @@
     margin: 18px 0 18px;
     color: var(--ink);
     font-size: clamp(2.6rem, 7vw, 4.4rem);
-    font-weight: 800;
-    letter-spacing: -0.035em;
+    font-weight: 700;
     line-height: 1.05;
   }
   .hero .lead { margin: 0 0 28px; max-width: 560px; font-size: 1.1rem; }
@@ -121,8 +120,7 @@
 
   /* Sections */
   section.block { padding: 64px 0; border-top: 1px solid var(--line); scroll-margin-top: 60px; }
-  .eyebrow { margin: 0 0 6px; color: var(--accent); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-  section.block > h2 { margin: 0 0 30px; color: var(--ink); font-size: 2rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
+  section.block > h2 { margin: 0 0 30px; color: var(--ink); font-size: 2rem; font-weight: 700; line-height: 1.2; }
 
   /* Research */
   .fields { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
@@ -132,13 +130,13 @@
     border-radius: 18px;
     background: var(--card);
     color: var(--ink);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.35;
   }
   .field i { display: block; margin-bottom: 12px; color: var(--accent); font-size: 1.25rem; }
   .topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
   .topic { padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; }
-  .topic h3 { margin: 0 0 12px; color: var(--muted); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+  .topic h3 { margin: 0 0 12px; color: var(--muted); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
   .topic ul { margin: 0; padding: 0; list-style: none; }
   .topic li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 9px 0; border-top: 1px solid var(--line); }
   .topic li:first-child { border-top: 0; padding-top: 0; }
@@ -148,27 +146,26 @@
   .topic.now .when { color: var(--accent); font-weight: 700; }
 
   /* Publications */
-  .group { display: flex; align-items: center; gap: 12px; margin: 38px 0 16px; }
+  .group { display: flex; align-items: center; gap: 12px; margin: 38px 0 0; }
   .group:first-of-type { margin-top: 0; }
-  .group h3 { margin: 0; color: var(--ink); font-size: 1.12rem; font-weight: 800; }
-  .group .count { padding: 1px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.8rem; font-weight: 800; }
+  .group h3 { margin: 0; color: var(--ink); font-size: 1.12rem; font-weight: 700; }
+  .group .count { padding: 1px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.8rem; font-weight: 700; }
   .group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-  ol.pubs { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  ol.pubs { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; }
   ol.pubs li {
     display: grid;
     grid-template-columns: 64px minmax(0, 1fr);
     gap: 18px;
-    padding: 18px 22px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: var(--bg);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
   }
-  ol.pubs li.fig { grid-template-columns: 400px minmax(0, 1fr); gap: 26px; align-items: center; padding: 20px; border-color: #c7d7fb; }
+  ol.pubs li:last-child { border-bottom: 0; padding-bottom: 0; }
+  ol.pubs li.fig { grid-template-columns: 400px minmax(0, 1fr); gap: 26px; align-items: center; }
   ol.pubs li.fig.nofig { grid-template-columns: minmax(0, 1fr); }
   ol.pubs li.fig.nofig .thumb { display: none; }
   .pubs .thumb { display: block; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; overflow: hidden; }
   .pubs .thumb img { display: block; width: 100%; height: auto; }
-  .pubs .year { color: var(--muted); font-size: 1.05rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .pubs .year { color: var(--muted); font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; }
   .pubs .ptitle { color: var(--ink); font-weight: 700; line-height: 1.45; }
   .pubs .authors { margin-top: 4px; color: var(--muted); font-size: 0.93rem; }
   .pubs .authors b { color: var(--ink); }
@@ -182,7 +179,7 @@
     color: #ffffff;
     font-size: 0.74rem;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.04em;
     vertical-align: 1px;
   }
@@ -196,14 +193,14 @@
     border-radius: 999px;
     color: var(--accent);
     font-size: 0.82rem;
-    font-weight: 800;
+    font-weight: 700;
   }
   .plink:hover { background: var(--accent); color: #ffffff; text-decoration: none; }
 
   /* Timeline */
   .timeline { margin: 0; padding: 0; list-style: none; }
   .timeline li { display: grid; grid-template-columns: 200px minmax(0, 1fr); }
-  .timeline .date { padding: 3px 28px 0 0; color: var(--accent); font-size: 0.88rem; font-weight: 800; letter-spacing: 0.01em; text-align: right; white-space: nowrap; }
+  .timeline .date { padding: 3px 28px 0 0; color: var(--accent); font-size: 0.88rem; font-weight: 700; letter-spacing: 0.01em; text-align: right; white-space: nowrap; }
   .timeline .body { position: relative; display: flex; align-items: flex-start; gap: 16px; padding: 0 0 32px 28px; border-left: 2px solid var(--line); }
   .timeline li:last-child .body { padding-bottom: 0; }
   .timeline .body::before {
@@ -218,7 +215,7 @@
     background: var(--bg);
   }
   .timeline .logo { flex: none; width: 46px; height: 46px; margin-top: 2px; object-fit: contain; }
-  .timeline .title { margin: 0 0 2px; color: var(--ink); font-size: 1.08rem; font-weight: 800; }
+  .timeline .title { margin: 0 0 2px; color: var(--ink); font-size: 1.08rem; font-weight: 700; }
   .timeline .place { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
   .timeline p { margin: 0; }
   .timeline .detail { color: var(--muted); font-size: 0.93rem; }
@@ -233,8 +230,8 @@
     section.block > h2 { font-size: 1.7rem; }
     .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .topics { grid-template-columns: 1fr; }
-    ol.pubs li { grid-template-columns: 1fr; gap: 4px; padding: 16px 18px; }
-    ol.pubs li.fig { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+    ol.pubs li { grid-template-columns: 1fr; gap: 4px; padding: 16px 0; }
+    ol.pubs li.fig { grid-template-columns: 1fr; gap: 16px; }
     .pubs .year { font-size: 0.9rem; }
     .timeline li { display: block; position: relative; padding: 0 0 28px 24px; border-left: 2px solid var(--line); }
     .timeline li:last-child { padding-bottom: 0; }
@@ -289,7 +286,6 @@
   </div>
 
   <section class="block" id="research">
-    <p class="eyebrow">Research</p>
     <h2>Research Interests</h2>
     <div class="fields">
       <div class="field"><i class="fa-solid fa-layer-group"></i>Multimodal Learning</div>
@@ -317,7 +313,6 @@
   </section>
 
   <section class="block" id="publications">
-    <p class="eyebrow">Papers</p>
     <h2>Publications</h2>
 
     <div class="group"><h3>International Conferences</h3><span class="count">1</span></div>
@@ -330,6 +325,7 @@
           <div class="venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 <span class="badge">Oral</span></div>
           <div class="plinks">
             <a class="plink" href="SeeRankFilter_AAAI2026.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+            <a class="plink" href="https://github.com/VisualAIKHU/SRF" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>Code</a>
           </div>
         </div>
       </li>
@@ -385,7 +381,6 @@
   </section>
 
   <section class="block" id="patent">
-    <p class="eyebrow">Intellectual Property</p>
     <h2>Patent</h2>
     <ol class="pubs">
       <li>
@@ -400,7 +395,6 @@
   </section>
 
   <section class="block" id="education">
-    <p class="eyebrow">Background</p>
     <h2>Education</h2>
     <ul class="timeline">
       <li>
@@ -428,7 +422,6 @@
   </section>
 
   <section class="block" id="experience">
-    <p class="eyebrow">Career</p>
     <h2>Experience</h2>
     <!-- School logos: upload logo_nyu.png and logo_khu.png next to this file; they stay hidden until the files exist -->
     <ul class="timeline">
