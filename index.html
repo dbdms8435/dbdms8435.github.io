@@ -70,17 +70,9 @@
     align-items: center;
     padding: 76px 0 72px;
   }
-  .pill {
-    display: inline-block;
-    padding: 5px 14px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 0.82rem;
-    font-weight: 700;
-  }
+  .role { margin: 0; color: var(--accent); font-size: 1rem; font-weight: 700; }
   .hero h1 {
-    margin: 18px 0 18px;
+    margin: 8px 0 18px;
     color: var(--ink);
     font-size: clamp(2.6rem, 7vw, 4.4rem);
     font-weight: 700;
@@ -116,26 +108,18 @@
     font-size: 4.5rem;
     overflow: hidden;
   }
-  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo { position: relative; }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
   /* Sections */
   section.block { padding: 64px 0; border-top: 1px solid var(--line); scroll-margin-top: 60px; }
   section.block > h2 { margin: 0 0 30px; color: var(--ink); font-size: 2rem; font-weight: 700; line-height: 1.2; }
 
   /* Research */
-  .fields { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-  .field {
-    padding: 20px 20px 18px;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: var(--card);
-    color: var(--ink);
-    font-weight: 700;
-    line-height: 1.35;
-  }
-  .field i { display: block; margin-bottom: 12px; color: var(--accent); font-size: 1.25rem; }
-  .topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
-  .topic { padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; }
+  .fields { display: flex; flex-wrap: wrap; gap: 10px 36px; }
+  .field { color: var(--ink); font-size: 1.1rem; font-weight: 700; }
+  .field i { margin-right: 9px; color: var(--accent); }
+  .topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-top: 36px; }
   .topic h3 { margin: 0 0 12px; color: var(--muted); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
   .topic ul { margin: 0; padding: 0; list-style: none; }
   .topic li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 9px 0; border-top: 1px solid var(--line); }
@@ -163,6 +147,7 @@
   ol.pubs li.fig { grid-template-columns: 400px minmax(0, 1fr); gap: 26px; align-items: center; }
   ol.pubs li.fig.nofig { grid-template-columns: minmax(0, 1fr); }
   ol.pubs li.fig.nofig .thumb { display: none; }
+  ol.pubs li.fig { margin-top: 16px; padding: 20px; border: 1px solid #c7d7fb; border-radius: 16px; }
   .pubs .thumb { display: block; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; overflow: hidden; }
   .pubs .thumb img { display: block; width: 100%; height: auto; }
   .pubs .year { color: var(--muted); font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -175,9 +160,9 @@
     margin-left: 6px;
     padding: 1px 10px;
     border-radius: 999px;
-    background: var(--accent);
+    background: #dc2626;
     color: #ffffff;
-    font-size: 0.74rem;
+    font-size: 0.8rem;
     font-style: normal;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -228,8 +213,8 @@
     .photo { max-width: 220px; }
     section.block { padding: 48px 0; }
     section.block > h2 { font-size: 1.7rem; }
-    .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .topics { grid-template-columns: 1fr; }
+    .fields { gap: 8px 24px; }
+    .topics { grid-template-columns: 1fr; gap: 28px; }
     ol.pubs li { grid-template-columns: 1fr; gap: 4px; padding: 16px 0; }
     ol.pubs li.fig { grid-template-columns: 1fr; gap: 16px; }
     .pubs .year { font-size: 0.9rem; }
@@ -271,7 +256,7 @@
 
   <div class="hero">
     <div>
-      <span class="pill">Integrated M.S./Ph.D. Student · Computer Science and Engineering</span>
+      <p class="role">Integrated M.S./Ph.D. Student · Visual AI Lab</p>
       <h1>YuEun Lee</h1>
       <p class="lead">Hi! I am an integrated M.S./Ph.D. student in the <b>Department of Computer Science and Engineering</b> at <b>Kyung Hee University</b>. My research interests are in <b>computer vision</b> and <b>multimodal learning</b>, with a focus on video understanding.</p>
       <div class="buttons">
@@ -281,8 +266,7 @@
         <a class="btn" href="https://scholar.google.com/citations?user=Lm1e8ocAAAAJ&amp;hl=ko" target="_blank" rel="noopener"><i class="fa-brands fa-google-scholar"></i>Google Scholar</a>
       </div>
     </div>
-    <!-- Profile photo: replace the icon below with <img src="profile.jpg" alt="YuEun Lee"> -->
-    <div class="photo"><i class="fa-solid fa-user"></i></div>
+    <div class="photo"><i class="fa-solid fa-user"></i><img src="profile.jpg" alt="YuEun Lee" onerror="this.remove()"></div>
   </div>
 
   <section class="block" id="research">
@@ -403,7 +387,7 @@
           <div>
             <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
             <p>Integrated M.S./Ph.D. Student, Department of Computer Science and Engineering</p>
-            <p class="detail">GPA: 4.175 / 4.3</p>
+            <p class="detail">GPA: 4.18 / 4.3 (4.4 / 4.5)</p>
           </div>
         </div>
       </li>
@@ -414,7 +398,7 @@
             <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
             <p>B.S., Department of Biomedical Engineering</p>
             <p>Double Major: Department of Electronic Engineering</p>
-            <p class="detail">GPA: 3.84 / 4.3</p>
+            <p class="detail">GPA: 3.84 / 4.3 (4.12 / 4.5)</p>
           </div>
         </div>
       </li>
@@ -443,7 +427,7 @@
           <div>
             <p class="title">Visual Artificial Intelligence (VAI) Lab</p>
             <p>Intern · Kyung Hee University, Department of Computer Science and Engineering</p>
-            <p class="detail">Multimodal Learning: Sound Source Localization</p>
+            <p class="detail">Multimodal Learning: Sound Source Localization · Advisor: Prof. Jung Uk Kim</p>
           </div>
         </div>
       </li>
@@ -454,7 +438,7 @@
           <div>
             <p class="title">Artificial Intelligence in Wearable and Medical Applications (AI-WM) Lab</p>
             <p>Intern · Kyung Hee University, Department of Biomedical Engineering</p>
-            <p class="detail">Automatic atrial fibrillation detection and prediction</p>
+            <p class="detail">Automatic atrial fibrillation detection and prediction · Advisor: Prof. Jinseok Lee</p>
           </div>
         </div>
       </li>
