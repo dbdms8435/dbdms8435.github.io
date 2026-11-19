@@ -5,66 +5,117 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YuEun Lee</title>
 <meta name="description" content="YuEun Lee — Integrated M.S./Ph.D. student in Computer Science and Engineering at Kyung Hee University. Computer vision and multimodal learning.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
   :root {
-    --bg: #fbfaf8;
-    --text: #1f2328;
-    --muted: #666d76;
-    --line: #e4e1db;
-    --accent: #8a1c2b;
-    --badge-bg: #f6e9eb;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #16181b;
-      --text: #e6e4df;
-      --muted: #9aa0a8;
-      --line: #2c3035;
-      --accent: #e58a97;
-      --badge-bg: #3a2327;
-    }
+    --bg: #ffffff;
+    --text: #3d4144;
+    --heading: #2f3336;
+    --muted: #6f777d;
+    --line: #e8eaec;
+    --link: #2f4f9e;
+    --soft: #f3f5f8;
   }
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.65;
   }
-  main {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 64px 20px 80px;
-  }
-  a { color: var(--accent); text-decoration: none; }
+  a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  header h1 {
-    margin: 0 0 6px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 2.4rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+  /* Top navigation */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar nav {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 36px;
+  }
+  .topbar .brand {
+    margin-right: 36px;
+    color: var(--heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .topbar a { color: var(--text); font-size: 1.05rem; }
+  .topbar a:hover { color: var(--link); text-decoration: none; }
+
+  /* Page layout */
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 44px 24px 80px;
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 56px;
+  }
+
+  /* Sidebar */
+  .sidebar { align-self: start; position: sticky; top: 96px; }
+  .photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c3c9cf;
+    font-size: 4.2rem;
+    overflow: hidden;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .sidebar h2 {
+    margin: 18px 0 6px;
+    color: var(--heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .sidebar .bio { margin: 0 0 16px; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+  .sidebar ul { margin: 0; padding: 0; list-style: none; font-size: 0.95rem; }
+  .sidebar li { display: flex; align-items: baseline; gap: 10px; margin-bottom: 9px; }
+  .sidebar li i { width: 18px; text-align: center; color: var(--heading); flex: none; }
+  .sidebar li a { color: var(--text); }
+  .sidebar li a:hover { color: var(--link); }
+  .sidebar .fa-linkedin { color: #0a66c2; }
+  .sidebar .fa-google-scholar { color: #4285f4; }
+
+  /* Main content */
+  main h1 {
+    margin: 0 0 28px;
+    color: var(--heading);
+    font-size: 2.1rem;
+    font-weight: 700;
     line-height: 1.2;
   }
-  header p { margin: 0; color: var(--muted); }
-  header .role { color: var(--text); font-weight: 500; }
-  header .contact { margin-top: 14px; }
-
-  section { margin-top: 48px; }
-  h2 {
-    margin: 0 0 18px;
-    padding-bottom: 8px;
+  section { margin-bottom: 52px; scroll-margin-top: 90px; }
+  section:last-of-type { margin-bottom: 0; }
+  main h2 {
+    margin: 0 0 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--line);
-    font-size: 0.8rem;
+    color: var(--heading);
+    font-size: 1.45rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
   }
+  main p { margin: 0 0 16px; }
+  main p:last-child { margin-bottom: 0; }
 
   .entry {
     display: grid;
@@ -73,49 +124,41 @@
     margin-bottom: 22px;
   }
   .entry:last-child { margin-bottom: 0; }
-  .entry .date {
-    color: var(--muted);
-    font-size: 0.9rem;
-    font-variant-numeric: tabular-nums;
-    padding-top: 2px;
-  }
-  .entry .title { font-weight: 600; }
-  .entry .place { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+  .entry .date { color: var(--muted); font-size: 0.92rem; font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .entry .title { color: var(--heading); font-weight: 700; }
+  .entry .place { color: var(--muted); font-weight: 400; font-size: 0.92rem; }
   .entry .detail { color: var(--muted); font-size: 0.95rem; }
   .entry p { margin: 0; }
 
-  .interests h3 {
-    margin: 0 0 4px;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  .interests ul {
-    margin: 0 0 18px;
-    padding-left: 20px;
-    color: var(--muted);
-  }
+  .interests h3 { margin: 0 0 4px; color: var(--heading); font-size: 1.05rem; font-weight: 700; }
+  .interests ul { margin: 0 0 18px; padding-left: 22px; }
   .interests ul:last-child { margin-bottom: 0; }
 
-  ol.pubs {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+  ol.pubs { margin: 0; padding: 0; list-style: none; }
   ol.pubs li { margin-bottom: 20px; }
   ol.pubs li:last-child { margin-bottom: 0; }
-  h3.group { margin: 34px 0 16px; padding: 7px 14px; border-left: 4px solid var(--accent); border-radius: 0 6px 6px 0; background: var(--badge-bg); font-size: 1.05rem; font-weight: 700; }
-  h3.group:first-of-type { margin-top: 0; }
-  .pubs .ptitle { font-weight: 600; }
+  .pubs .ptitle { color: var(--heading); font-weight: 700; }
   .pubs .authors { color: var(--muted); font-size: 0.95rem; }
-  .pubs .authors b { color: var(--text); font-weight: 600; }
+  .pubs .authors b { color: var(--heading); font-weight: 700; }
   .pubs .venue { font-size: 0.95rem; font-style: italic; }
+  h3.group {
+    margin: 34px 0 16px;
+    padding: 7px 14px;
+    border-left: 4px solid var(--link);
+    border-radius: 0 6px 6px 0;
+    background: var(--soft);
+    color: var(--heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  h3.group:first-of-type { margin-top: 0; }
   .badge {
     display: inline-block;
     margin-left: 6px;
-    padding: 1px 8px;
+    padding: 1px 9px;
     border-radius: 999px;
-    background: var(--badge-bg);
-    color: var(--accent);
+    background: #fdecec;
+    color: #c0392b;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 700;
@@ -123,156 +166,178 @@
     vertical-align: 1px;
   }
 
-  footer {
-    margin-top: 64px;
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
+  footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
 
-  @media (max-width: 600px) {
-    main { padding: 40px 16px 56px; }
-    header h1 { font-size: 2rem; }
+  @media (max-width: 860px) {
+    .page { grid-template-columns: 1fr; gap: 36px; padding: 32px 16px 56px; }
+    .sidebar { position: static; }
+    .photo { width: 150px; height: 150px; font-size: 3.2rem; }
+    .topbar nav { padding: 14px 16px; gap: 4px 22px; }
+    .topbar .brand { margin-right: 10px; }
+    .topbar a { font-size: 0.98rem; }
+    main h1 { font-size: 1.8rem; }
     .entry { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
-<main>
 
-  <header>
+<header class="topbar">
+  <nav>
+    <a class="brand" href="#top">YuEun Lee</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+  </nav>
+</header>
+
+<div class="page" id="top">
+
+  <aside class="sidebar">
+    <!-- Profile photo: replace the icon below with <img src="profile.jpg" alt="YuEun Lee"> -->
+    <div class="photo"><i class="fa-solid fa-user"></i></div>
+    <h2>YuEun Lee</h2>
+    <p class="bio">Integrated M.S./Ph.D. student interested in computer vision and multimodal learning.</p>
+    <ul>
+      <li><i class="fa-solid fa-location-dot"></i><span>Yongin, Korea</span></li>
+      <li><i class="fa-solid fa-building-columns"></i><span>Kyung Hee University</span></li>
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:dbdms8435@khu.ac.kr">Email</a></li>
+      <!-- LinkedIn / Google Scholar: wrap the text in <a href="..."> once the links are ready -->
+      <li><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></li>
+      <li><i class="fa-brands fa-google-scholar"></i><span>Google Scholar</span></li>
+    </ul>
+  </aside>
+
+  <main>
     <h1>YuEun Lee</h1>
-    <p class="role">Integrated M.S./Ph.D. Student</p>
-    <p>Department of Computer Science and Engineering, Kyung Hee University</p>
-    <p class="contact"><a href="mailto:dbdms8435@khu.ac.kr">dbdms8435@khu.ac.kr</a></p>
-  </header>
 
-  <section>
-    <h2>Research Interests</h2>
-    <div class="interests">
-      <h3>Computer Vision</h3>
-      <ul>
-        <li>Scene and Video Understanding (Moment Retrieval, Highlight Detection, Video Question Answering)</li>
-        <li>Vision-Language Captioning and Generation (Change Captioning)</li>
-      </ul>
-      <h3>Multimodal Learning</h3>
-      <ul>
-        <li>Audio-Visual Representation Learning (Sound Source Localization)</li>
-        <li>Vision-Language Models</li>
-        <li>Cross-Modal Interaction</li>
-      </ul>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>Hi! I am YuEun Lee, an integrated M.S./Ph.D. student in the Department of Computer Science and Engineering at Kyung Hee University. My research interests are in <b>computer vision</b> and <b>multimodal learning</b>, with a focus on video understanding tasks such as moment retrieval and highlight detection.</p>
+    </section>
 
-  <section>
-    <h2>Education</h2>
-    <div class="entry">
-      <div class="date">Sep. 2024 – Present</div>
-      <div>
-        <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
-        <p>Integrated M.S./Ph.D. Student, Department of Computer Science and Engineering</p>
-        <p class="detail">GPA: 4.175 / 4.3</p>
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <div class="interests">
+        <h3>Computer Vision</h3>
+        <ul>
+          <li>Scene and Video Understanding (Moment Retrieval, Highlight Detection, Video Question Answering)</li>
+          <li>Vision-Language Captioning and Generation (Change Captioning)</li>
+        </ul>
+        <h3>Multimodal Learning</h3>
+        <ul>
+          <li>Audio-Visual Representation Learning (Sound Source Localization)</li>
+          <li>Vision-Language Models</li>
+          <li>Cross-Modal Interaction</li>
+        </ul>
       </div>
-    </div>
-    <div class="entry">
-      <div class="date">Mar. 2020 – Aug. 2024</div>
-      <div>
-        <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
-        <p>B.S., Department of Biomedical Engineering</p>
-        <p>Double Major: Department of Electronic Engineering</p>
-        <p class="detail">GPA: 3.84 / 4.3</p>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <h3 class="group">International Conferences</h3>
+      <ol class="pubs">
+        <li>
+          <div class="ptitle">See, Rank, and Filter: Important Word-Aware Clip Filtering via Scene Understanding for Moment Retrieval and Highlight Detection</div>
+          <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
+          <div class="venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 <span class="badge">Oral</span></div>
+        </li>
+      </ol>
+      <h3 class="group">Domestic Journals</h3>
+      <ol class="pubs">
+        <li>
+          <div class="ptitle">Video Moment Retrieval and Highlight Detection via Effective Fusion of Captions Generated by Vision-Language Models</div>
+          <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
+          <div class="venue">Journal of Broadcast Engineering, 2025</div>
+        </li>
+        <li>
+          <div class="ptitle">Mixed Sound Source Localization via Audio-Visual Information Fusion</div>
+          <div class="authors"><b>YuEun Lee</b>, Sung Jin Um and Jung Uk Kim</div>
+          <div class="venue">Journal of KIISE (Korean Institute of Information Scientists and Engineers), 2025</div>
+        </li>
+      </ol>
+      <h3 class="group">Domestic Conferences</h3>
+      <ol class="pubs">
+        <li>
+          <div class="ptitle">Moment Retrieval and Highlight Detection via Keyword Extraction from Natural Language</div>
+          <div class="authors">Suyong Choi, <b>Yu Eun Lee</b> and Jung Uk Kim</div>
+          <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
+        </li>
+        <li>
+          <div class="ptitle">Moment Retrieval and Highlight Detection Framework via Semantic Alignment of Phrases</div>
+          <div class="authors"><b>YuEun Lee</b>, Suyong Choi and Jung Uk Kim</div>
+          <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
+        </li>
+        <li>
+          <div class="ptitle">Grounded VideoQA via Optimal Transport-based Fine-Grained</div>
+          <div class="authors">Soyeon Lee, <b>YuEun Lee</b>, Suyong Choi and Jung Uk Kim</div>
+          <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="patent">
+      <h2>Patent</h2>
+      <ol class="pubs">
+        <li>
+          <div class="ptitle">Important word-aware iterative frame filtering for moment retrieval and highlight detection, and computing device for performing the same</div>
+          <div class="authors">Jung Uk Kim, <b>YuEun Lee</b></div>
+          <div class="venue">Korean Patent Application No. 10-2025-0016109 (Feb. 7, 2025)</div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="date">Sep. 2024 – Present</div>
+        <div>
+          <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
+          <p>Integrated M.S./Ph.D. Student, Department of Computer Science and Engineering</p>
+          <p class="detail">GPA: 4.175 / 4.3</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Publications</h2>
-    <h3 class="group">International Conferences</h3>
-    <ol class="pubs">
-      <li>
-        <div class="ptitle">See, Rank, and Filter: Important Word-Aware Clip Filtering via Scene Understanding for Moment Retrieval and Highlight Detection</div>
-        <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
-        <div class="venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 <span class="badge">Oral</span></div>
-      </li>
-    </ol>
-    <h3 class="group">Domestic Journals</h3>
-    <ol class="pubs">
-      <li>
-        <div class="ptitle">Video Moment Retrieval and Highlight Detection via Effective Fusion of Captions Generated by Vision-Language Models</div>
-        <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
-        <div class="venue">Journal of Broadcast Engineering, 2025</div>
-      </li>
-      <li>
-        <div class="ptitle">Mixed Sound Source Localization via Audio-Visual Information Fusion</div>
-        <div class="authors"><b>YuEun Lee</b>, Sung Jin Um and Jung Uk Kim</div>
-        <div class="venue">Journal of KIISE (Korean Institute of Information Scientists and Engineers), 2025</div>
-      </li>
-    </ol>
-    <h3 class="group">Domestic Conferences</h3>
-    <ol class="pubs">
-      <li>
-        <div class="ptitle">Moment Retrieval and Highlight Detection via Keyword Extraction from Natural Language</div>
-        <div class="authors">Suyong Choi, <b>Yu Eun Lee</b> and Jung Uk Kim</div>
-        <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
-      </li>
-      <li>
-        <div class="ptitle">Moment Retrieval and Highlight Detection Framework via Semantic Alignment of Phrases</div>
-        <div class="authors"><b>YuEun Lee</b>, Suyong Choi and Jung Uk Kim</div>
-        <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
-      </li>
-      <li>
-        <div class="ptitle">Grounded VideoQA via Optimal Transport-based Fine-Grained</div>
-        <div class="authors">Soyeon Lee, <b>YuEun Lee</b>, Suyong Choi and Jung Uk Kim</div>
-        <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
-      </li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Patent</h2>
-    <ol class="pubs">
-      <li>
-        <div class="ptitle">Important word-aware iterative frame filtering for moment retrieval and highlight detection, and computing device for performing the same</div>
-        <div class="authors">Jung Uk Kim, <b>YuEun Lee</b></div>
-        <div class="venue">Korean Patent Application No. 10-2025-0016109 (Feb. 7, 2025)</div>
-      </li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Visiting Scholar</h2>
-    <div class="entry">
-      <div class="date">Jun. 2026 – Aug. 2026</div>
-      <div>
-        <p class="title">New York University <span class="place">· New York, USA</span></p>
-        <p>Visiting Scholar</p>
+      <div class="entry">
+        <div class="date">Mar. 2020 – Aug. 2024</div>
+        <div>
+          <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
+          <p>B.S., Department of Biomedical Engineering</p>
+          <p>Double Major: Department of Electronic Engineering</p>
+          <p class="detail">GPA: 3.84 / 4.3</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Internship</h2>
-    <div class="entry">
-      <div class="date">Mar. 2024 – Aug. 2024</div>
-      <div>
-        <p class="title">Visual Artificial Intelligence (VAI) Lab</p>
-        <p>Kyung Hee University, Department of Computer Science and Engineering</p>
-        <p class="detail">Multimodal Learning: Sound Source Localization</p>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="date">Jun. 2026 – Aug. 2026</div>
+        <div>
+          <p class="title">New York University <span class="place">· New York, USA</span></p>
+          <p>Visiting Scholar</p>
+        </div>
       </div>
-    </div>
-    <div class="entry">
-      <div class="date">Feb. 2023 – Feb. 2024</div>
-      <div>
-        <p class="title">Artificial Intelligence in Wearable and Medical Applications (AI-WM) Lab</p>
-        <p>Kyung Hee University, Department of Biomedical Engineering</p>
-        <p class="detail">Automatic atrial fibrillation detection and prediction</p>
+      <div class="entry">
+        <div class="date">Mar. 2024 – Aug. 2024</div>
+        <div>
+          <p class="title">Visual Artificial Intelligence (VAI) Lab</p>
+          <p>Intern · Kyung Hee University, Department of Computer Science and Engineering</p>
+          <p class="detail">Multimodal Learning: Sound Source Localization</p>
+        </div>
       </div>
-    </div>
-  </section>
+      <div class="entry">
+        <div class="date">Feb. 2023 – Feb. 2024</div>
+        <div>
+          <p class="title">Artificial Intelligence in Wearable and Medical Applications (AI-WM) Lab</p>
+          <p>Intern · Kyung Hee University, Department of Biomedical Engineering</p>
+          <p class="detail">Automatic atrial fibrillation detection and prediction</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>Last updated: November 2026</footer>
+    <footer>Last updated: November 2026</footer>
+  </main>
 
-</main>
+</div>
 </body>
 </html>
