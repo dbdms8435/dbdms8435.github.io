@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YuEun Lee</title>
+<meta name="description" content="YuEun Lee — Integrated M.S./Ph.D. student in Computer Science and Engineering at Kyung Hee University. Computer vision and multimodal learning.">
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --text: #1f2328;
+    --muted: #666d76;
+    --line: #e4e1db;
+    --accent: #8a1c2b;
+    --badge-bg: #f6e9eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181b;
+      --text: #e6e4df;
+      --muted: #9aa0a8;
+      --line: #2c3035;
+      --accent: #e58a97;
+      --badge-bg: #3a2327;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 20px 80px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header h1 {
+    margin: 0 0 6px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  header p { margin: 0; color: var(--muted); }
+  header .role { color: var(--text); font-weight: 500; }
+  header .contact { margin-top: 14px; }
+
+  section { margin-top: 48px; }
+  h2 {
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    gap: 4px 20px;
+    margin-bottom: 22px;
+  }
+  .entry:last-child { margin-bottom: 0; }
+  .entry .date {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+  .entry .title { font-weight: 600; }
+  .entry .place { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+  .entry .detail { color: var(--muted); font-size: 0.95rem; }
+  .entry p { margin: 0; }
+
+  .interests h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .interests ul {
+    margin: 0 0 18px;
+    padding-left: 20px;
+    color: var(--muted);
+  }
+  .interests ul:last-child { margin-bottom: 0; }
+
+  ol.pubs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ol.pubs li { margin-bottom: 20px; }
+  ol.pubs li:last-child { margin-bottom: 0; }
+  .pubs .ptitle { font-weight: 600; }
+  .pubs .authors { color: var(--muted); font-size: 0.95rem; }
+  .pubs .authors b { color: var(--text); font-weight: 600; }
+  .pubs .venue { font-size: 0.95rem; font-style: italic; }
+  .badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--badge-bg);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    vertical-align: 1px;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    main { padding: 40px 16px 56px; }
+    header h1 { font-size: 2rem; }
+    .entry { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>YuEun Lee</h1>
+    <p class="role">Integrated M.S./Ph.D. Student</p>
+    <p>Department of Computer Science and Engineering, Kyung Hee University</p>
+    <p class="contact"><a href="mailto:dbdms8435@khu.ac.kr">dbdms8435@khu.ac.kr</a></p>
+  </header>
+
+  <section>
+    <h2>Research Interests</h2>
+    <div class="interests">
+      <h3>Computer Vision</h3>
+      <ul>
+        <li>Scene and Video Understanding (Moment Retrieval, Highlight Detection, Video Question Answering)</li>
+        <li>Vision-Language Captioning and Generation (Change Captioning)</li>
+      </ul>
+      <h3>Multimodal Learning</h3>
+      <ul>
+        <li>Audio-Visual Representation Learning (Sound Source Localization)</li>
+        <li>Vision-Language Models</li>
+        <li>Cross-Modal Interaction</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="date">Sep. 2024 – Present</div>
+      <div>
+        <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
+        <p>Integrated M.S./Ph.D. Student, Department of Computer Science and Engineering</p>
+        <p class="detail">GPA: 4.175 / 4.3</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="date">Mar. 2020 – Aug. 2024</div>
+      <div>
+        <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
+        <p>B.S., Department of Biomedical Engineering</p>
+        <p>Double Major: Department of Electronic Engineering</p>
+        <p class="detail">GPA: 3.84 / 4.3</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    <ol class="pubs">
+      <li>
+        <div class="ptitle">See, Rank, and Filter: Important Word-Aware Clip Filtering via Scene Understanding for Moment Retrieval and Highlight Detection</div>
+        <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
+        <div class="venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 <span class="badge">Oral</span></div>
+      </li>
+      <li>
+        <div class="ptitle">Video Moment Retrieval and Highlight Detection via Effective Fusion of Captions Generated by Vision-Language Models</div>
+        <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
+        <div class="venue">Journal of Broadcast Engineering, 2025</div>
+      </li>
+      <li>
+        <div class="ptitle">Mixed Sound Source Localization via Audio-Visual Information Fusion</div>
+        <div class="authors"><b>YuEun Lee</b>, Sung Jin Um and Jung Uk Kim</div>
+        <div class="venue">Journal of KIISE (Korean Institute of Information Scientists and Engineers), 2025</div>
+      </li>
+      <li>
+        <div class="ptitle">Moment Retrieval and Highlight Detection via Keyword Extraction from Natural Language</div>
+        <div class="authors">Suyong Choi, <b>Yu Eun Lee</b> and Jung Uk Kim</div>
+        <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
+      </li>
+      <li>
+        <div class="ptitle">Moment Retrieval and Highlight Detection Framework via Semantic Alignment of Phrases</div>
+        <div class="authors"><b>YuEun Lee</b>, Suyong Choi and Jung Uk Kim</div>
+        <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
+      </li>
+      <li>
+        <div class="ptitle">Grounded VideoQA via Optimal Transport-based Fine-Grained</div>
+        <div class="authors">Soyeon Lee, <b>YuEun Lee</b>, Suyong Choi and Jung Uk Kim</div>
+        <div class="venue">The Korean Institute of Broadcast and Media Engineers, 2025</div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Patent</h2>
+    <ol class="pubs">
+      <li>
+        <div class="ptitle">Important word-aware iterative frame filtering for moment retrieval and highlight detection, and computing device for performing the same</div>
+        <div class="authors">Jung Uk Kim, <b>YuEun Lee</b></div>
+        <div class="venue">Korean Patent Application No. 10-2025-0016109 (Feb. 7, 2025)</div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Visiting Scholar</h2>
+    <div class="entry">
+      <div class="date">Jun. 2026 – Aug. 2026</div>
+      <div>
+        <p class="title">New York University <span class="place">· New York, USA</span></p>
+        <p>Visiting Scholar</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Internship</h2>
+    <div class="entry">
+      <div class="date">Mar. 2024 – Aug. 2024</div>
+      <div>
+        <p class="title">Visual Artificial Intelligence (VAI) Lab</p>
+        <p>Kyung Hee University, Department of Computer Science and Engineering</p>
+        <p class="detail">Multimodal Learning: Sound Source Localization</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="date">Feb. 2023 – Feb. 2024</div>
+      <div>
+        <p class="title">Artificial Intelligence in Wearable and Medical Applications (AI-WM) Lab</p>
+        <p>Kyung Hee University, Department of Biomedical Engineering</p>
+        <p class="detail">Automatic atrial fibrillation detection and prediction</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>Last updated: November 2026</footer>
+
+</main>
+</body>
+</html>
