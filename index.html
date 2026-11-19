@@ -13,9 +13,9 @@
     --text: #334155;
     --muted: #64748b;
     --line: #e5e9ef;
-    --card: #f7f9fb;
-    --accent: #0f766e;
-    --accent-soft: #e3f3f0;
+    --card: #f7f9fc;
+    --accent: #2563eb;
+    --accent-soft: #e8f0fe;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -65,10 +65,10 @@
   /* Hero */
   .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 290px;
-    gap: 56px;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 64px;
     align-items: center;
-    padding: 80px 0 72px;
+    padding: 76px 0 72px;
   }
   .pill {
     display: inline-block;
@@ -106,16 +106,9 @@
   .btn:hover { border-color: var(--ink); text-decoration: none; transform: translateY(-1px); }
   .btn.primary { border-color: var(--ink); background: var(--ink); color: #ffffff; }
 
-  .profile {
-    padding: 16px 16px 22px;
-    border: 1px solid var(--line);
-    border-radius: 26px;
-    background: var(--bg);
-    box-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.28);
-  }
   .photo {
-    aspect-ratio: 1 / 1.08;
-    border-radius: 16px;
+    aspect-ratio: 1 / 1.15;
+    border-radius: 24px;
     background: var(--card);
     display: flex;
     align-items: center;
@@ -125,23 +118,34 @@
     overflow: hidden;
   }
   .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .profile h2 { margin: 18px 6px 4px; color: var(--ink); font-size: 1.2rem; font-weight: 800; }
-  .profile p { margin: 0 6px; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
-  .profile p i { width: 18px; margin-right: 4px; color: var(--accent); text-align: center; }
 
   /* Sections */
   section.block { padding: 64px 0; border-top: 1px solid var(--line); scroll-margin-top: 60px; }
   .eyebrow { margin: 0 0 6px; color: var(--accent); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
   section.block > h2 { margin: 0 0 30px; color: var(--ink); font-size: 2rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
 
-  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-  .card { padding: 24px 26px; border: 1px solid var(--line); border-radius: 20px; background: var(--card); }
-  .card h3 { margin: 0 0 10px; color: var(--ink); font-size: 1.15rem; font-weight: 800; }
-  .card h3 i { margin-right: 8px; color: var(--accent); }
-  .card ul { margin: 0; padding-left: 20px; }
-  .card li { margin-bottom: 6px; }
-  .card li:last-child { margin-bottom: 0; }
-  .card li span { color: var(--muted); font-size: 0.93rem; }
+  /* Research */
+  .fields { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .field {
+    padding: 20px 20px 18px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--card);
+    color: var(--ink);
+    font-weight: 800;
+    line-height: 1.35;
+  }
+  .field i { display: block; margin-bottom: 12px; color: var(--accent); font-size: 1.25rem; }
+  .topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+  .topic { padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; }
+  .topic h3 { margin: 0 0 12px; color: var(--muted); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+  .topic ul { margin: 0; padding: 0; list-style: none; }
+  .topic li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 9px 0; border-top: 1px solid var(--line); }
+  .topic li:first-child { border-top: 0; padding-top: 0; }
+  .topic li:last-child { padding-bottom: 0; }
+  .topic .name { color: var(--ink); font-weight: 700; }
+  .topic .when { color: var(--muted); font-size: 0.88rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .topic.now .when { color: var(--accent); font-weight: 700; }
 
   /* Publications */
   .group { display: flex; align-items: center; gap: 12px; margin: 38px 0 16px; }
@@ -159,9 +163,12 @@
     border-radius: 16px;
     background: var(--bg);
   }
-  ol.pubs li.featured { border-color: var(--accent); background: var(--accent-soft); }
+  ol.pubs li.fig { grid-template-columns: 400px minmax(0, 1fr); gap: 26px; align-items: center; padding: 20px; border-color: #c7d7fb; }
+  ol.pubs li.fig.nofig { grid-template-columns: minmax(0, 1fr); }
+  ol.pubs li.fig.nofig .thumb { display: none; }
+  .pubs .thumb { display: block; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; overflow: hidden; }
+  .pubs .thumb img { display: block; width: 100%; height: auto; }
   .pubs .year { color: var(--muted); font-size: 1.05rem; font-weight: 800; font-variant-numeric: tabular-nums; }
-  .pubs li.featured .year { color: var(--accent); }
   .pubs .ptitle { color: var(--ink); font-weight: 700; line-height: 1.45; }
   .pubs .authors { margin-top: 4px; color: var(--muted); font-size: 0.93rem; }
   .pubs .authors b { color: var(--ink); }
@@ -179,24 +186,39 @@
     letter-spacing: 0.04em;
     vertical-align: 1px;
   }
+  .plinks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .plink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 13px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+  .plink:hover { background: var(--accent); color: #ffffff; text-decoration: none; }
 
   /* Timeline */
-  .timeline { margin: 0; padding: 0 0 0 26px; list-style: none; border-left: 2px solid var(--line); }
-  .timeline li { position: relative; padding-bottom: 30px; }
-  .timeline li:last-child { padding-bottom: 0; }
-  .timeline li::before {
+  .timeline { margin: 0; padding: 0; list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 200px minmax(0, 1fr); }
+  .timeline .date { padding: 3px 28px 0 0; color: var(--accent); font-size: 0.88rem; font-weight: 800; letter-spacing: 0.01em; text-align: right; white-space: nowrap; }
+  .timeline .body { position: relative; display: flex; align-items: flex-start; gap: 16px; padding: 0 0 32px 28px; border-left: 2px solid var(--line); }
+  .timeline li:last-child .body { padding-bottom: 0; }
+  .timeline .body::before {
     content: "";
     position: absolute;
-    left: -34px;
-    top: 7px;
+    left: -8px;
+    top: 6px;
     width: 14px;
     height: 14px;
     border: 3px solid var(--accent);
     border-radius: 50%;
     background: var(--bg);
   }
-  .timeline .date { color: var(--accent); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.02em; }
-  .timeline .title { margin: 2px 0 2px; color: var(--ink); font-size: 1.08rem; font-weight: 800; }
+  .timeline .logo { flex: none; width: 46px; height: 46px; margin-top: 2px; object-fit: contain; }
+  .timeline .title { margin: 0 0 2px; color: var(--ink); font-size: 1.08rem; font-weight: 800; }
   .timeline .place { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
   .timeline p { margin: 0; }
   .timeline .detail { color: var(--muted); font-size: 0.93rem; }
@@ -206,12 +228,30 @@
   @media (max-width: 820px) {
     .wrap { padding: 0 18px; }
     .hero { grid-template-columns: 1fr; gap: 36px; padding: 48px 0 52px; }
-    .profile { max-width: 300px; }
+    .photo { max-width: 220px; }
     section.block { padding: 48px 0; }
     section.block > h2 { font-size: 1.7rem; }
-    .cards { grid-template-columns: 1fr; }
+    .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .topics { grid-template-columns: 1fr; }
     ol.pubs li { grid-template-columns: 1fr; gap: 4px; padding: 16px 18px; }
+    ol.pubs li.fig { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
     .pubs .year { font-size: 0.9rem; }
+    .timeline li { display: block; position: relative; padding: 0 0 28px 24px; border-left: 2px solid var(--line); }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      background: var(--bg);
+    }
+    .timeline .date { padding: 0 0 2px; text-align: left; }
+    .timeline .body { padding: 0; border-left: 0; }
+    .timeline .body::before { display: none; }
   }
 </style>
 </head>
@@ -238,37 +278,39 @@
       <h1>YuEun Lee</h1>
       <p class="lead">Hi! I am an integrated M.S./Ph.D. student in the <b>Department of Computer Science and Engineering</b> at <b>Kyung Hee University</b>. My research interests are in <b>computer vision</b> and <b>multimodal learning</b>, with a focus on video understanding.</p>
       <div class="buttons">
-        <a class="btn primary" href="mailto:dbdms8435@khu.ac.kr"><i class="fa-solid fa-envelope"></i>Email</a>
+        <a class="btn primary" href="CV_YuEunLee.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>CV</a>
+        <a class="btn" href="mailto:dbdms8435@khu.ac.kr"><i class="fa-solid fa-envelope"></i>Email</a>
         <a class="btn" href="https://www.linkedin.com/in/yueun-lee-86537a350/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
         <a class="btn" href="https://scholar.google.com/citations?user=Lm1e8ocAAAAJ&amp;hl=ko" target="_blank" rel="noopener"><i class="fa-brands fa-google-scholar"></i>Google Scholar</a>
       </div>
     </div>
-    <aside class="profile">
-      <!-- Profile photo: replace the icon below with <img src="profile.jpg" alt="YuEun Lee"> -->
-      <div class="photo"><i class="fa-solid fa-user"></i></div>
-      <h2>YuEun Lee</h2>
-      <p><i class="fa-solid fa-building-columns"></i>Kyung Hee University</p>
-      <p><i class="fa-solid fa-location-dot"></i>Yongin, Korea</p>
-    </aside>
+    <!-- Profile photo: replace the icon below with <img src="profile.jpg" alt="YuEun Lee"> -->
+    <div class="photo"><i class="fa-solid fa-user"></i></div>
   </div>
 
   <section class="block" id="research">
     <p class="eyebrow">Research</p>
     <h2>Research Interests</h2>
-    <div class="cards">
-      <div class="card">
-        <h3><i class="fa-solid fa-eye"></i>Computer Vision</h3>
+    <div class="fields">
+      <div class="field"><i class="fa-solid fa-layer-group"></i>Multimodal Learning</div>
+      <div class="field"><i class="fa-solid fa-eye"></i>Computer Vision</div>
+      <div class="field"><i class="fa-solid fa-comments"></i>Multimodal Large Language Model</div>
+      <div class="field"><i class="fa-solid fa-film"></i>Video Understanding</div>
+    </div>
+    <div class="topics">
+      <div class="topic now">
+        <h3>Current Topics</h3>
         <ul>
-          <li>Scene and Video Understanding<br><span>Moment Retrieval, Highlight Detection, Video Question Answering</span></li>
-          <li>Vision-Language Captioning and Generation<br><span>Change Captioning</span></li>
+          <li><span class="name">Video Temporal Grounding</span><span class="when">2024 – Present</span></li>
+          <li><span class="name">Grounded Video Question Answering</span><span class="when">2025 – Present</span></li>
+          <li><span class="name">Social Interaction Understanding</span><span class="when">2026 – Present</span></li>
         </ul>
       </div>
-      <div class="card">
-        <h3><i class="fa-solid fa-layer-group"></i>Multimodal Learning</h3>
+      <div class="topic">
+        <h3>Previous Topics</h3>
         <ul>
-          <li>Audio-Visual Representation Learning<br><span>Sound Source Localization</span></li>
-          <li>Vision-Language Models</li>
-          <li>Cross-Modal Interaction</li>
+          <li><span class="name">Change Captioning</span><span class="when">2025</span></li>
+          <li><span class="name">Sound Source Localization</span><span class="when">2024 – 2025</span></li>
         </ul>
       </div>
     </div>
@@ -280,12 +322,15 @@
 
     <div class="group"><h3>International Conferences</h3><span class="count">1</span></div>
     <ol class="pubs">
-      <li class="featured">
-        <div class="year">2026</div>
+      <li class="fig">
+        <a class="thumb" href="seerankfilter_fig.png" target="_blank" rel="noopener"><img src="seerankfilter_fig.png" alt="Overall architecture of See, Rank, and Filter" onerror="this.closest('li').classList.add('nofig')"></a>
         <div>
           <div class="ptitle">See, Rank, and Filter: Important Word-Aware Clip Filtering via Scene Understanding for Moment Retrieval and Highlight Detection</div>
           <div class="authors"><b>YuEun Lee</b> and Jung Uk Kim</div>
-          <div class="venue">AAAI Conference on Artificial Intelligence (AAAI) <span class="badge">Oral</span></div>
+          <div class="venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 <span class="badge">Oral</span></div>
+          <div class="plinks">
+            <a class="plink" href="SeeRankFilter_AAAI2026.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+          </div>
         </div>
       </li>
     </ol>
@@ -360,16 +405,24 @@
     <ul class="timeline">
       <li>
         <div class="date">Sep. 2024 – Present</div>
-        <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
-        <p>Integrated M.S./Ph.D. Student, Department of Computer Science and Engineering</p>
-        <p class="detail">GPA: 4.175 / 4.3</p>
+        <div class="body">
+          <div>
+            <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
+            <p>Integrated M.S./Ph.D. Student, Department of Computer Science and Engineering</p>
+            <p class="detail">GPA: 4.175 / 4.3</p>
+          </div>
+        </div>
       </li>
       <li>
         <div class="date">Mar. 2020 – Aug. 2024</div>
-        <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
-        <p>B.S., Department of Biomedical Engineering</p>
-        <p>Double Major: Department of Electronic Engineering</p>
-        <p class="detail">GPA: 3.84 / 4.3</p>
+        <div class="body">
+          <div>
+            <p class="title">Kyung Hee University <span class="place">· Yongin, Korea</span></p>
+            <p>B.S., Department of Biomedical Engineering</p>
+            <p>Double Major: Department of Electronic Engineering</p>
+            <p class="detail">GPA: 3.84 / 4.3</p>
+          </div>
+        </div>
       </li>
     </ul>
   </section>
@@ -377,23 +430,40 @@
   <section class="block" id="experience">
     <p class="eyebrow">Career</p>
     <h2>Experience</h2>
+    <!-- School logos: upload logo_nyu.png and logo_khu.png next to this file; they stay hidden until the files exist -->
     <ul class="timeline">
       <li>
         <div class="date">Jun. 2026 – Aug. 2026</div>
-        <p class="title">New York University <span class="place">· New York, USA</span></p>
-        <p>Visiting Scholar</p>
+        <div class="body">
+          <img class="logo" src="logo_nyu.png" alt="" onerror="this.remove()">
+          <div>
+            <p class="title">New York University <span class="place">· New York, USA</span></p>
+            <p>Visiting Scholar, Global AI Frontier Lab</p>
+            <p class="detail">Collaborated with the Oermann Lab · Advisor: Prof. Eric K. Oermann</p>
+          </div>
+        </div>
       </li>
       <li>
         <div class="date">Mar. 2024 – Aug. 2024</div>
-        <p class="title">Visual Artificial Intelligence (VAI) Lab</p>
-        <p>Intern · Kyung Hee University, Department of Computer Science and Engineering</p>
-        <p class="detail">Multimodal Learning: Sound Source Localization</p>
+        <div class="body">
+          <img class="logo" src="logo_khu.png" alt="" onerror="this.remove()">
+          <div>
+            <p class="title">Visual Artificial Intelligence (VAI) Lab</p>
+            <p>Intern · Kyung Hee University, Department of Computer Science and Engineering</p>
+            <p class="detail">Multimodal Learning: Sound Source Localization</p>
+          </div>
+        </div>
       </li>
       <li>
         <div class="date">Feb. 2023 – Feb. 2024</div>
-        <p class="title">Artificial Intelligence in Wearable and Medical Applications (AI-WM) Lab</p>
-        <p>Intern · Kyung Hee University, Department of Biomedical Engineering</p>
-        <p class="detail">Automatic atrial fibrillation detection and prediction</p>
+        <div class="body">
+          <img class="logo" src="logo_khu.png" alt="" onerror="this.remove()">
+          <div>
+            <p class="title">Artificial Intelligence in Wearable and Medical Applications (AI-WM) Lab</p>
+            <p>Intern · Kyung Hee University, Department of Biomedical Engineering</p>
+            <p class="detail">Automatic atrial fibrillation detection and prediction</p>
+          </div>
+        </div>
       </li>
     </ul>
   </section>
